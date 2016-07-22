@@ -1,0 +1,26 @@
+{
+  "host": "localhost",
+  "port": 3030,
+  "mongodb": "mongodb://localhost:27017/feathersLivescriptStarter",
+  "public": "../public/",
+  "auth": {
+    "token": {
+      "secret": "IE/t4OVMEcuAxum/Qbxe++sEo9nNIYyV4ut6XWUOj/BtNnRZrk0WCu1E5+9DcpFLWJI9PwvjUG2VdbP3xTlEyw=="
+    },
+    "local": {},
+    "facebook": {
+      "clientID": "your facebook client id",
+      "clientSecret": "your facebook client secret",
+      "permissions": {
+        "scope": ["public_profile","email"]
+      }
+    },
+    "google": {
+      "clientID": "your google client id",
+      "clientSecret": "your google client secret",
+      "permissions": {
+        "scope": ["profile"]
+      }
+    }
+  }
+}
