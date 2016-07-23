@@ -1,9 +1,9 @@
 var path = require('path')
 var nodeExternals = require('webpack-node-externals');
 module.exports = {
-    entry: './src/index.ls',
+    entry: './server/src/index.ls',
     output: {
-        path: 'build/',
+        path: './server/build/',
         filename: 'app.js'
     },
     node: {
@@ -18,9 +18,10 @@ module.exports = {
         ]
     },
     resolve: {
-        root: path.resolve('./src'),
+        root: path.resolve(__dirname),
         alias: {
-            src: path.resolve(__dirname, 'app', './src')
+            client: 'client/src',
+            server: 'server/src'
         },
         extensions: ['', '.js', '.ls']
     }

@@ -17,14 +17,14 @@ userSchema = new Schema do
 		type: String
 		required: true
 	createdAt:
-	    type: Date
-	    'default': Date.now
-  	updatedAt:
-	    type: Date
-	    'default': Date.now
+		type: Date
+		'default': Date.now
+	updatedAt:
+		type: Date
+		'default': Date.now
+
 
 
 
 userModel = mongoose.model 'user', userSchema
-
 module.exports = userModel

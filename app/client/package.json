@@ -1,0 +1,40 @@
+{
+  "name": "frontend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "init-symlink": "cd node_modules && ln -nsf ../src && ln -nsf ../build-js && cd ..",
+    "watch:src": "watch-run --initial -p 'src/**/*.ls' 'npm run build-js'",
+    "build": "browserify -d -t browserify-livescript src/index.ls > build/app.js",
+    "build-old": "lsc --output build -c src/app.ls",
+    "build-foo": "mv node_modules/src node_modules/src__tmp && mv node_modules/build-js node_modules/src && browserify build-js/index.js > build/app.js && mv node_modules/src node_modules/build-js && mv node_modules/src__tmp node_modules/src ",
+    "build-js": "lsc -b -co build-js src && npm run build-foo",
+    "start": "http-server ./build"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "chart.js": "^2.1.6",
+    "fastclick": "^1.0.6",
+    "ismobilejs": "^0.4.0",
+    "level-browserify": "^1.1.0",
+    "mithril": "^0.2.5",
+    "mithril.exitable": "^1.1.2",
+    "mmsvg": "^1.1.1",
+    "moment": "^2.13.0",
+    "polythene": "^0.2.30",
+    "velocity-animate": "^1.2.3",
+    "xhr": "^2.2.0"
+  },
+  "devDependencies": {
+    "babel-core": "^6.10.4",
+    "babel-loader": "^6.2.4",
+    "babel-preset-es2015": "^6.9.0",
+    "babel-preset-stage-2": "^6.11.0",
+    "browserify-livescript": "^0.2.3",
+    "json-loader": "^0.5.4",
+    "livescript-loader": "^0.1.5",
+    "webpack": "^1.13.1"
+  }
+}
